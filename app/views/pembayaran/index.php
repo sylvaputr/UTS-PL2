@@ -31,7 +31,7 @@
           <td><?= $pembayaran['jumlah_bayar'];?></td>
           <td>
             <a href="<?php echo base64_encode('pembayaran/edit/'.$pembayaran['id_pembayaran']); ?>" class="badge badge-primary badge-pill">Edit</a>
-            <a href="<?php echo base64_encode('pembayaran/hapus/'.$pembayaran['id_pembayaran']); ?>" class="badge badge-primary badge-pill">Hapus</a>
+            <a href="<?php echo base64_encode('pembayaran/hapus/'.$pembayaran['id_pembayaran']); ?>" onclick="return confirm('Are you sure?');" class="badge badge-primary badge-pill">Hapus</a>
           </td>
         </tr>
        <?php endforeach; ?>
@@ -39,5 +39,6 @@
 </table>
 <br>
 <a href="<?php echo base64_encode('pembayaran/tambah'); ?>" class="btn btn-success mt-2">Tambah Pembayaran</a>
+<a href="<?php echo base64_encode('home'); ?>" class="btn btn-success mt-2">Home</a>
 
 </div>

@@ -4,7 +4,7 @@
 
   <form action="<?php echo base64_encode('pembayaran/simpan'); ?>" method="POST" enctype="multipart/form-data">
     ID Pembayaran <br>
-    <input type="text" name="id_pembayaran" required><br>
+    <input type="number" name="id_pembayaran" required><br>
     Petugas <br>
     <select class="form-control" name="id_petugas">
         <option value="">Pilih</option>
@@ -20,11 +20,11 @@
       <?php endforeach; ?>
     </select><br>
     Tgl Bayar <br>
-    <input type="text" name="tgl_bayar" required><br>
+    <input type="number" name="tgl_bayar" required><br>
     Bulan Bayar <br>
     <input type="text" name="bulan_dibayar" required><br>
     Tahun Bayar <br>
-    <input type="text" name="tahun_dibayar" required><br>
+    <input type="number" name="tahun_dibayar" required><br>
     SPP <br>
     <select class="form-control" name="id_spp">
         <option value="">Pilih</option>
@@ -33,7 +33,7 @@
       <?php endforeach; ?>
     </select><br>
     Jumlah Bayar <br>
-    <input type="text" name="jumlah_bayar" required><br>
+    <input type="number" name="jumlah_bayar" required><br>
     <br>
 
     <input type="submit" value="simpan" class="btn btn-success mt-2">

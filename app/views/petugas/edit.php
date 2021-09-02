@@ -5,7 +5,7 @@
   <form action="<?php echo base64_encode('petugas/update'); ?>" method="POST" enctype="multipart/form-data">
   <input type="hidden" name="id_petugas" value="<?= $data['petugas']['id_petugas']; ?>">
   ID Petugas <br>
-    <input type="text" value="<?= $data['petugas']['id_petugas']; ?>" required disabled><br>
+    <input type="number" value="<?= $data['petugas']['id_petugas']; ?>" required disabled><br>
   Username <br>
     <input type="text" name="username" value="<?= $data['petugas']['username']; ?>" required><br>
     Password <br>

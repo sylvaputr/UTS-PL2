@@ -23,7 +23,7 @@
           <td><?= $petugas['level'];?></td>
           <td>
             <a href="<?php echo base64_encode('petugas/edit/'.$petugas['id_petugas']); ?>" class="badge badge-primary badge-pill">Edit</a>
-            <a href="<?php echo base64_encode('petugas/hapus/'.$petugas['id_petugas']); ?>" class="badge badge-primary badge-pill">Hapus</a>
+            <a href="<?php echo base64_encode('petugas/hapus/'.$petugas['id_petugas']); ?>" onclick="return confirm('Are you sure?');" class="badge badge-primary badge-pill">Hapus</a>
           </td>
         </tr>
        <?php endforeach; ?>
@@ -31,5 +31,6 @@
 </table>
 <br>
 <a href="<?php echo base64_encode('petugas/tambah'); ?>" class="btn btn-success mt-2">Tambah Petugas</a>
+<a href="<?php echo base64_encode('home'); ?>" class="btn btn-success mt-2">Home</a>
 
 </div>

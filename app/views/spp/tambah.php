@@ -4,11 +4,11 @@
 
   <form action="<?php echo base64_encode('spp/simpan'); ?>" method="POST" enctype="multipart/form-data">
     ID Spp <br>
-    <input type="text" name="id_spp" required><br>
+    <input type="number" name="id_spp" required><br>
     Tahun <br>
-    <input type="text" name="tahun" required><br>
+    <input type="number" name="tahun" required><br>
     Nominal <br>
-    <input type="text" name="nominal" required><br>
+    <input type="number" name="nominal" required><br>
     <br>
 
     <input type="submit" value="simpan" class="btn btn-success mt-2">

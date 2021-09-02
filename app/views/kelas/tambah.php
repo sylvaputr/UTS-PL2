@@ -4,7 +4,7 @@
 
   <form action="<?php echo base64_encode('kelas/simpan'); ?>" method="POST" enctype="multipart/form-data">
     ID Kelas <br>
-    <input type="text" name="id_kelas" required><br>
+    <input type="number" name="id_kelas" required><br>
     Nama Kelas <br>
     <input type="text" name="nama_kelas" required><br>
     Kompetensi Keahlian <br>

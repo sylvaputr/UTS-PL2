@@ -5,7 +5,7 @@
   <form action="<?php echo base64_encode('kelas/update'); ?>" method="POST" enctype="multipart/form-data">
     <input type="hidden" name="id_kelas" value="<?= $data['kelas']['id_kelas']; ?>">
     ID Kelas <br>
-    <input type="text" value="<?= $data['kelas']['id_kelas']; ?>" required disabled><br>
+    <input type="number" value="<?= $data['kelas']['id_kelas']; ?>" required disabled><br>
     Nama Kelas <br>
     <input type="text" name="nama_kelas" value="<?= $data['kelas']['nama_kelas']; ?>" required ><br>
     Kompetensi Keahlian <br>

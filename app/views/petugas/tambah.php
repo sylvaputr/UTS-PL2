@@ -4,7 +4,7 @@
 
   <form action="<?php echo base64_encode('petugas/simpan'); ?>" method="POST" enctype="multipart/form-data">
     ID Petugas <br>
-    <input type="text" name="id_petugas" required><br>
+    <input type="number" name="id_petugas" required><br>
     Username <br>
     <input type="text" name="username" required><br>
     Password <br>

@@ -29,7 +29,7 @@
           <td><?= $siswa['nominal'];?></td>
           <td>
             <a href="<?php echo base64_encode('siswa/edit/'.$siswa['nisn']); ?>" class="badge badge-primary badge-pill">Edit</a>
-            <a href="<?php echo base64_encode('siswa/hapus/'.$siswa['nisn']); ?>" class="badge badge-primary badge-pill">Hapus</a>
+            <a href="<?php echo base64_encode('siswa/hapus/'.$siswa['nisn']); ?>" onclick="return confirm('Are you sure?');" class="badge badge-primary badge-pill">Hapus</a>
           </td>
         </tr>
        <?php endforeach; ?>
@@ -37,5 +37,6 @@
 </table>
 <br>
 <a href="<?php echo base64_encode('siswa/tambah'); ?>" class="btn btn-success mt-2">Tambah Siswa</a>
+<a href="<?php echo base64_encode('home'); ?>" class="btn btn-success mt-2">Home</a>
 
 </div>

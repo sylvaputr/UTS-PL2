@@ -5,11 +5,11 @@
   <form action="<?php echo base64_encode('spp/update'); ?>" method="POST" enctype="multipart/form-data">
     <input type="hidden" name="id_spp" value="<?= $data['spp']['id_spp']; ?>">
     ID SPP <br>
-    <input type="text" value="<?= $data['spp']['id_spp']; ?>" required disabled><br>
+    <input type="number" value="<?= $data['spp']['id_spp']; ?>" required disabled><br>
     Tahun <br>
-    <input type="text" name="tahun" value="<?= $data['spp']['tahun']; ?>" required ><br>
+    <input type="number" name="tahun" value="<?= $data['spp']['tahun']; ?>" required ><br>
     Nominal <br>
-    <input type="text" name="nominal" value="<?= $data['spp']['nominal']; ?>" required><br>
+    <input type="number" name="nominal" value="<?= $data['spp']['nominal']; ?>" required><br>
     <br>
 
     <input type="submit" value="simpan" class="btn btn-success mt-2">
