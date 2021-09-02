@@ -1,6 +1,6 @@
 <div class="row" align="center">
   
-<h1>Daftar Mahasiswa</h1>
+<h1>Daftar Siswa</h1>
 
 <table class="table" border="1 px">
     <thead>
@@ -28,14 +28,14 @@
           <td><?= $siswa['tahun'];?></td>
           <td><?= $siswa['nominal'];?></td>
           <td>
-            <a href="<?= BASEURL; ?>/siswa/edit/<?= $siswa['id'] ?>" class="badge badge-primary badge-pill">Edit</a>
-            <a href="<?php echo base64_encode('siswa/hapus/').$siswa['id'] ?>" class="badge badge-primary badge-pill">Hapus</a>
+            <a href="<?php echo base64_encode('siswa/edit/'.$siswa['nisn']); ?>" class="badge badge-primary badge-pill">Edit</a>
+            <a href="<?php echo base64_encode('siswa/hapus/'.$siswa['nisn']); ?>" class="badge badge-primary badge-pill">Hapus</a>
           </td>
         </tr>
        <?php endforeach; ?>
     </tbody>
 </table>
 <br>
-<a href="<?php echo base64_encode('siswa/tambah'); ?>" class="btn btn-success mt-2">Tambah Mahasiswa</a>
+<a href="<?php echo base64_encode('siswa/tambah'); ?>" class="btn btn-success mt-2">Tambah Siswa</a>
 
 </div>

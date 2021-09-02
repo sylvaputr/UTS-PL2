@@ -17,8 +17,8 @@ class Kelas extends Controller {
         $id_kelas                  = $_POST['id_kelas'];
         $nama_kelas                = $_POST['nama_kelas'];
         $kompetensi_keahlian       = $_POST['kompetensi_keahlian'];
-
         $data['kelas'] = $this->model('Kelas_model')->tambahKelas($id_kelas, $nama_kelas, $kompetensi_keahlian);
+        $data['kelas'] = $this->model('Kelas_model')->getAllkelas();
         $this->view('kelas/index', $data);
     }
     
@@ -32,12 +32,14 @@ class Kelas extends Controller {
         $id_kelas                  = $_POST['id_kelas'];
         $nama_kelas                = $_POST['nama_kelas'];
         $kompetensi_keahlian       = $_POST['kompetensi_keahlian'];
-        $data['mhs'] = $this->model('Kelas_model')->updateMahasiswa($id_kelas, $nama_kelas, $kompetensi_keahlian);
+        $data['kelas'] = $this->model('Kelas_model')->updateKelas($id_kelas, $nama_kelas, $kompetensi_keahlian);
+        $data['kelas'] = $this->model('Kelas_model')->getAllkelas();
         $this->view('kelas/index', $data);
     }
 
     public function hapus($id){
-        $data['siswa'] = $this->model('Kelas_model')->deleteSiswa($id);
+        $data['kelas'] = $this->model('Kelas_model')->deleteKelas($id);
+        $data['kelas'] = $this->model('Kelas_model')->getAllkelas();
         $this->view('kelas/index', $data);
     }
 }

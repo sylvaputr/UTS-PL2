@@ -10,13 +10,23 @@
     Nama <br>
     <input type="text" name="nama" required><br>
     Kelas <br>
-    <input type="text" name="id_kelas" required><br>
+    <select class="form-control" name="id_kelas">
+        <option value="">Pilih</option>
+          <?php foreach ($data['kelas'] as $row) :?>
+        <option value="<?= $row['id_kelas']; ?>"><?= $row['nama_kelas']; ?></option>
+      <?php endforeach; ?>
+    </select><br>
     Alamat <br>
     <input type="text" name="alamat" required><br>
     No Tlp <br>
     <input type="text" name="no_telp" required><br>
     SPP <br>
-    <input type="text" name="id_spp" required><br>
+    <select class="form-control" name="id_spp">
+        <option value="">Pilih</option>
+          <?php foreach ($data['spp'] as $row) :?>
+        <option value="<?= $row['id_spp']; ?>"><?= $row['tahun'].' - '.$row['nominal']; ?></option>
+      <?php endforeach; ?>
+    </select><br>
     <br>
 
     <input type="submit" value="simpan" class="btn btn-success mt-2">

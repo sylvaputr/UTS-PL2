@@ -16,7 +16,7 @@ class Kelas_model {
 
     public function getAllkelasById($id) {
         $this->db->query('SELECT * FROM kelas WHERE id_kelas=:id_kelas');
-        $this->db->bind('id',$id);
+        $this->db->bind('id_kelas',$id);
         return $this->db->single();
     }
 
@@ -28,17 +28,17 @@ class Kelas_model {
         $this->db->execute();
     }
 
-    public function updateMahasiswa($nim, $nama, $jurusan) {
-        $this->db->query('UPDATE ' . $this->table . ' SET nama=:nama, jurusan=:jurusan WHERE nim=:nim');
-        $this->db->bind('nim',$nim);
-        $this->db->bind('nama',$nama);
-        $this->db->bind('jurusan',$jurusan);
+    public function updateKelas($id_kelas, $nama_kelas, $kompetensi_keahlian) {
+        $this->db->query('UPDATE kelas SET nama_kelas=:nama_kelas, kompetensi_keahlian=:kompetensi_keahlian WHERE id_kelas=:id_kelas');
+        $this->db->bind('id_kelas',$id_kelas);
+        $this->db->bind('nama_kelas',$nama_kelas);
+        $this->db->bind('kompetensi_keahlian',$kompetensi_keahlian);
         $this->db->execute();
     }
 
-    public function deleteMhs($id) {
-        $this->db->query('DELETE FROM ' . $this->table . ' WHERE id=:id');
-        $this->db->bind('id',$id);
+    public function deleteKelas($id) {
+        $this->db->query('DELETE FROM kelas WHERE id_kelas=:id_kelas');
+        $this->db->bind('id_kelas',$id);
         $this->db->execute();
     }
 
