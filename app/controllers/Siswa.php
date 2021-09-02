@@ -37,19 +37,20 @@ class Siswa extends Controller {
     } 
 
     public function update() {  
+        $nisn       = $_POST['nisn'];
         $nis        = $_POST['nis'];
         $nama       = $_POST['nama'];
         $id_kelas   = $_POST['id_kelas'];
         $alamat     = $_POST['alamat'];
         $no_telp    = $_POST['no_telp'];
         $id_spp     = $_POST['id_spp'];
-        $data['siswa'] = $this->model('Siswa_model')->updateSiswa($nis,$nama,$id_kelas,$alamat,$no_telp,$id_spp);
+        $data['siswa'] = $this->model('Siswa_model')->updateSiswa($nisn,$nis,$nama,$id_kelas,$alamat,$no_telp,$id_spp);
         $data['siswa'] = $this->model('Siswa_model')->getAllsiswa();
         $this->view('siswa/index', $data);
     }
 
     public function hapus($id){
-        $data['siswa'] = $this->model('Siswa_model')->deletesiswa($id);
+        $data['siswa'] = $this->model('Siswa_model')->deleteSiswa($id);
         $data['siswa'] = $this->model('Siswa_model')->getAllsiswa();
         $this->view('siswa/index', $data);
     }

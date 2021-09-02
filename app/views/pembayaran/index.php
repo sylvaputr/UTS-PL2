@@ -30,8 +30,8 @@
           <td><?= $pembayaran['nominal'];?></td>
           <td><?= $pembayaran['jumlah_bayar'];?></td>
           <td>
-            <a href="<?= BASEURL; ?>/pembayaran/edit/<?= $pembayaran['id'] ?>" class="badge badge-primary badge-pill">Edit</a>
-            <a href="<?= BASEURL; ?>/pembayaran/hapus/<?= $pembayaran['id'] ?>" class="badge badge-primary badge-pill">Hapus</a>
+            <a href="<?php echo base64_encode('pembayaran/edit/'.$pembayaran['id_pembayaran']); ?>" class="badge badge-primary badge-pill">Edit</a>
+            <a href="<?php echo base64_encode('pembayaran/hapus/'.$pembayaran['id_pembayaran']); ?>" class="badge badge-primary badge-pill">Hapus</a>
           </td>
         </tr>
        <?php endforeach; ?>

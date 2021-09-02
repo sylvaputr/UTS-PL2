@@ -14,9 +14,9 @@ class Petugas_model {
         return $this->db->resultSet();
     }
 
-    public function getAllMhasiswaById($id) {
-        $this->db->query('SELECT * FROM ' . $this->table . ' WHERE id=:id');
-        $this->db->bind('id',$id);
+    public function getAllPetugasById($id) {
+        $this->db->query('SELECT * FROM petugas WHERE id_petugas=:id_petugas');
+        $this->db->bind('id_petugas',$id);
         return $this->db->single();
     }
 
@@ -30,17 +30,19 @@ class Petugas_model {
         $this->db->execute();
     }
 
-    public function updateMahasiswa($nim, $nama, $jurusan) {
-        $this->db->query('UPDATE ' . $this->table . ' SET nama=:nama, jurusan=:jurusan WHERE nim=:nim');
-        $this->db->bind('nim',$nim);
-        $this->db->bind('nama',$nama);
-        $this->db->bind('jurusan',$jurusan);
+    public function updatePetugas($id_petugas, $username, $password, $nama_petugas, $level) {
+        $this->db->query('UPDATE petugas SET username=:username, password=:password, nama_petugas=:nama_petugas, level=:level WHERE id_petugas=:id_petugas');
+        $this->db->bind('id_petugas',$id_petugas);
+        $this->db->bind('username',$username);
+        $this->db->bind('password',$password);
+        $this->db->bind('nama_petugas',$nama_petugas);
+        $this->db->bind('level',$level);
         $this->db->execute();
     }
 
-    public function deleteMhs($id) {
-        $this->db->query('DELETE FROM ' . $this->table . ' WHERE id=:id');
-        $this->db->bind('id',$id);
+    public function deletePetugas($id) {
+        $this->db->query('DELETE FROM petugas WHERE id_petugas=:id_petugas');
+        $this->db->bind('id_petugas',$id);
         $this->db->execute();
     }
 

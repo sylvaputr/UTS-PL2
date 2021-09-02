@@ -18,8 +18,8 @@
           <td><?= $spp['tahun'];?></td>
           <td><?= $spp['nominal'];?></td>
           <td>
-            <a href="<?= BASEURL; ?>/spp/edit/<?= $spp['id'] ?>" class="badge badge-primary badge-pill">Edit</a>
-            <a href="<?= BASEURL; ?>/spp/hapus/<?= $spp['id'] ?>" class="badge badge-primary badge-pill">Hapus</a>
+            <a href="<?php echo base64_encode('spp/edit/'.$spp['id_spp']); ?>" class="badge badge-primary badge-pill">Edit</a>
+            <a href="<?php echo base64_encode('spp/hapus/'.$spp['id_spp']); ?>" class="badge badge-primary badge-pill">Hapus</a>
           </td>
         </tr>
        <?php endforeach; ?>

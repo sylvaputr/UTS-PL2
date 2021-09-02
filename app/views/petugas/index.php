@@ -22,8 +22,8 @@
           <td><?= $petugas['nama_petugas'];?></td>
           <td><?= $petugas['level'];?></td>
           <td>
-            <a href="<?= BASEURL; ?>/petugas/edit/<?= $petugas['id'] ?>" class="badge badge-primary badge-pill">Edit</a>
-            <a href="<?= BASEURL; ?>/petugas/hapus/<?= $petugas['id'] ?>" class="badge badge-primary badge-pill">Hapus</a>
+            <a href="<?php echo base64_encode('petugas/edit/'.$petugas['id_petugas']); ?>" class="badge badge-primary badge-pill">Edit</a>
+            <a href="<?php echo base64_encode('petugas/hapus/'.$petugas['id_petugas']); ?>" class="badge badge-primary badge-pill">Hapus</a>
           </td>
         </tr>
        <?php endforeach; ?>

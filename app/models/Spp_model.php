@@ -14,9 +14,9 @@ class Spp_model {
         return $this->db->resultSet();
     }
 
-    public function getAllMhasiswaById($id) {
-        $this->db->query('SELECT * FROM ' . $this->table . ' WHERE id=:id');
-        $this->db->bind('id',$id);
+    public function getAllSppById($id) {
+        $this->db->query('SELECT * FROM spp WHERE id_spp=:id_spp');
+        $this->db->bind('id_spp',$id);
         return $this->db->single();
     }
 
@@ -28,17 +28,17 @@ class Spp_model {
         $this->db->execute();
     }
 
-    public function updateMahasiswa($nim, $nama, $jurusan) {
-        $this->db->query('UPDATE ' . $this->table . ' SET nama=:nama, jurusan=:jurusan WHERE nim=:nim');
-        $this->db->bind('nim',$nim);
-        $this->db->bind('nama',$nama);
-        $this->db->bind('jurusan',$jurusan);
+    public function updateSpp($id_spp, $tahun, $nominal) {
+        $this->db->query('UPDATE spp SET tahun=:tahun, nominal=:nominal WHERE id_spp=:id_spp');
+        $this->db->bind('id_spp',$id_spp);
+        $this->db->bind('tahun',$tahun);
+        $this->db->bind('nominal',$nominal);
         $this->db->execute();
     }
 
-    public function deleteMhs($id) {
-        $this->db->query('DELETE FROM ' . $this->table . ' WHERE id=:id');
-        $this->db->bind('id',$id);
+    public function deleteSpp($id) {
+        $this->db->query('DELETE FROM spp WHERE id_spp=:id_spp');
+        $this->db->bind('id_spp',$id);
         $this->db->execute();
     }
 

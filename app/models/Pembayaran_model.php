@@ -18,37 +18,41 @@ class Pembayaran_model {
         return $this->db->resultSet();
     }
 
-    public function getAllMhasiswaById($id) {
-        $this->db->query('SELECT * FROM ' . $this->table . ' WHERE id=:id');
-        $this->db->bind('id',$id);
+    public function getAllPembayaranId($id) {
+        $this->db->query('SELECT * FROM pembayaran WHERE id_pembayaran=:id_pembayaran');
+        $this->db->bind('id_pembayaran',$id);
         return $this->db->single();
     }
 
     public function tambahPembayaran($id_pembayaran, $id_petugas, $nisn, $tgl_bayar, $bulan_dibayar, $tahun_dibayar, $id_spp, $jumlah_bayar) {
-        $this->db->query('INSERT INTO ' . $this->table . '(id_pembayaran, id_petugas, nisn, tgl_bayar, bulan_dibayar, tahun_dibayar, id_spp, jumlah_bayar) VALUES(:id_pembayaran, :id_petugas, :nisn, :tgl_bayar, :bulan_dibayar, :tahun_dibayar, :id_spp, :jumlah_bayar)');
+        $this->db->query('INSERT INTO pembayaran (id_pembayaran, id_petugas, nisn, tgl_bayar, bulan_dibayar, tahun_dibayar, id_spp, jumlah_bayar) VALUES(:id_pembayaran, :id_petugas, :nisn, :tgl_bayar, :bulan_dibayar, :tahun_dibayar, :id_spp, :jumlah_bayar)');
         $this->db->bind('id_pembayaran',$id_pembayaran);
         $this->db->bind('id_petugas',$id_petugas);
         $this->db->bind('nisn',$nisn);
-        $this->db->bind('id_pembayaran',$id_pembayaran);
-        $this->db->bind('id_petugas',$id_petugas);
-        $this->db->bind('nisn',$nisn);
-        $this->db->bind('id_pembayaran',$id_pembayaran);
-        $this->db->bind('id_petugas',$id_petugas);
-        $this->db->bind('nisn',$nisn);
+        $this->db->bind('tgl_bayar',$tgl_bayar);
+        $this->db->bind('bulan_dibayar',$bulan_dibayar);
+        $this->db->bind('tahun_dibayar',$tahun_dibayar);
+        $this->db->bind('id_spp',$id_spp);
+        $this->db->bind('jumlah_bayar',$jumlah_bayar);
         $this->db->execute();
     }
 
-    public function updateMahasiswa($nim, $nama, $jurusan) {
-        $this->db->query('UPDATE ' . $this->table . ' SET nama=:nama, jurusan=:jurusan WHERE nim=:nim');
-        $this->db->bind('nim',$nim);
-        $this->db->bind('nama',$nama);
-        $this->db->bind('jurusan',$jurusan);
+    public function updatePembayaran($id_pembayaran, $id_petugas, $nisn, $tgl_bayar, $bulan_dibayar, $tahun_dibayar, $id_spp, $jumlah_bayar) {
+        $this->db->query('UPDATE pembayaran SET nama=:nama, jurusan=:jurusan WHERE nim=:nim');
+        $this->db->bind('id_pembayaran',$id_pembayaran);
+        $this->db->bind('id_petugas',$id_petugas);
+        $this->db->bind('nisn',$nisn);
+        $this->db->bind('tgl_bayar',$tgl_bayar);
+        $this->db->bind('bulan_dibayar',$bulan_dibayar);
+        $this->db->bind('tahun_dibayar',$tahun_dibayar);
+        $this->db->bind('id_spp',$id_spp);
+        $this->db->bind('jumlah_bayar',$jumlah_bayar);
         $this->db->execute();
     }
 
-    public function deleteMhs($id) {
-        $this->db->query('DELETE FROM ' . $this->table . ' WHERE id=:id');
-        $this->db->bind('id',$id);
+    public function deletePembayaran($id) {
+        $this->db->query('DELETE FROM pembayaran WHERE id_pembayaran=:id_pembayaran');
+        $this->db->bind('id_pembayaran',$id);
         $this->db->execute();
     }
 

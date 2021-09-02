@@ -13,7 +13,12 @@
       <?php endforeach; ?>
     </select><br>
     NISN <br>
-    <input type="text" name="nisn" required><br>
+    <select class="form-control" name="nisn">
+        <option value="">Pilih</option>
+          <?php foreach ($data['siswa'] as $row) :?>
+        <option value="<?= $row['nisn']; ?>"><?= $row['nisn']; ?></option>
+      <?php endforeach; ?>
+    </select><br>
     Tgl Bayar <br>
     <input type="text" name="tgl_bayar" required><br>
     Bulan Bayar <br>

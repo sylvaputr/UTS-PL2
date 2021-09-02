@@ -20,29 +20,30 @@ class Petugas extends Controller {
         $nama_petugas    = $_POST['nama_petugas'];
         $level           = $_POST['level'];
         $data['petugas'] = $this->model('Petugas_model')->tambahPetugas($id_petugas,$username,$password,$nama_petugas,$level);
+        $data['petugas'] = $this->model('Petugas_model')->getAllpetugas();
         $this->view('petugas/index', $data);
     }
     
     public function edit($id){
-        $data['title'] = 'Detail Mahasiswa';
-        $data['mhs'] = $this->model('Mahasiswa_model')->getAllMhasiswaById($id);
-        $this->view('templates/header', $data);
-        $this->view('mahasiswa/edit', $data);
-        $this->view('templates/header');
+        $data['title'] = 'Detail Petugas';
+        $data['petugas'] = $this->model('Petugas_model')->getAllPetugasById($id);
+        $this->view('petugas/edit', $data);
     }
 
-    public function updateMahasiswa(){  
-        $nim     = $_POST['nim'];
-        $nama    = $_POST['nama'];
-        $jurusan = $_POST['jurusan'];
-        $data['mhs'] = $this->model('Mahasiswa_model')->updateMahasiswa($nim,$nama,$jurusan);
-        // return $this->index();
-        header('location:../mahasiswa');
+    public function update(){  
+        $id_petugas      = $_POST['id_petugas'];
+        $username        = $_POST['username'];
+        $password        = $_POST['password'];
+        $nama_petugas    = $_POST['nama_petugas'];
+        $level           = $_POST['level'];
+        $data['petugas'] = $this->model('Petugas_model')->updatePetugas($id_petugas,$username,$password,$nama_petugas,$level);
+        $data['petugas'] = $this->model('Petugas_model')->getAllpetugas();
+        $this->view('petugas/index', $data);
     }
 
     public function hapus($id){
-        $data['mhs'] = $this->model('Mahasiswa_model')->deleteMhs($id);
-        // return $this->index();
-        header('location:../../mahasiswa');
+        $data['petugas'] = $this->model('Petugas_model')->deletePetugas($id);
+        $data['petugas'] = $this->model('Petugas_model')->getAllpetugas();
+        $this->view('petugas/index', $data);
     }
 }
