@@ -9,8 +9,7 @@ class App{
     public function __construct(){
         $url = $this->parseURL();
 
-        var_dump($url);
-        if(file_exists('../app/controllers/' . $url[0] . '.php')){
+        if(isset($_GET['url']) && file_exists('../app/controllers/' . $url[0] . '.php')){
             $this->controller = $url[0];
             unset($url[0]);
         }
@@ -34,9 +33,8 @@ class App{
     }
 
     public function parseURL(){
-        echo $_GET['url'];
         if( isset($_GET['url'])){
-            $url = rtrim($_GET['url'], '/');
+            $url = rtrim(base64_decode($_GET['url']), '/');
             $url = filter_var($url, FILTER_SANITIZE_URL);
             $url = explode('/',$url);
             return $url;

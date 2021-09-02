@@ -11,31 +11,29 @@
         <th> Kelas </th>
         <th> Alamat </th>
         <th> No Telp </th>
-        <th> Tahun SPP </th>
-        <th> Nominal </th>
+        <th> SPP </th>
         <th> Aksi </th>
       </tr>
     </thead>
     <tbody>
         <?php foreach ($data['siswa'] as $siswa) :?>
-        <tr align="center">
+        <tr>
           <td><?= $siswa['nisn'];?></td>
           <td><?= $siswa['nis'];?></td>
           <td><?= $siswa['nama'];?></td>
-          <td><?= $siswa['nama_kelas'];?></td>
+          <td><?= $siswa['id_kelas'];?></td>
           <td><?= $siswa['alamat'];?></td>
           <td><?= $siswa['no_telp'];?></td>
-          <td><?= $siswa['tahun'];?></td>
-          <td><?= $siswa['nominal'];?></td>
+          <td><?= $siswa['id_spp'];?></td>
           <td>
             <a href="<?= BASEURL; ?>/siswa/edit/<?= $siswa['id'] ?>" class="badge badge-primary badge-pill">Edit</a>
-            <a href="<?php echo base64_encode('siswa/hapus/').$siswa['id'] ?>" class="badge badge-primary badge-pill">Hapus</a>
+            <a href="<?= BASEURL; ?>/siswa/hapus/<?= $siswa['id'] ?>" class="badge badge-primary badge-pill">Hapus</a>
           </td>
         </tr>
        <?php endforeach; ?>
     </tbody>
 </table>
 <br>
-<a href="<?php echo base64_encode('siswa/tambah'); ?>" class="btn btn-success mt-2">Tambah Mahasiswa</a>
+<a href="<?= BASEURL; ?>/siswa/tambah" class="btn btn-success mt-2">Tambah Mahasiswa</a>
 
 </div>

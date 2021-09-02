@@ -11,33 +11,36 @@ error_reporting(error_reporting() & ~E_NOTICE)
 <table width="100%" height="100%" border="1">
     <tr height="5%">
         <td align="center">
-            <a href="siswa">Siswa</a>
-            <a href="index.php?id=<?php echo base64_encode(2); ?>">Dosen</a>
-            <a href="index.php?id=<?php echo base64_encode(3); ?>">Matakuliah</a>
-            <a href="index.php?id=<?php echo base64_encode(4); ?>">Nilai</a>
+            <a href="<?php echo base64_encode('siswa'); ?>">Siswa</a>
+            <a href="<?php echo base64_encode('kelas'); ?>">Kelas</a>
+            <a href="<?php echo base64_encode('petugas'); ?>">Petugas</a>
+            <a href="<?php echo base64_encode('pembayaran'); ?>">Pembayaran</a>
+            <a href="<?php echo base64_encode('spp'); ?>">SPP</a>
         </td>
     </tr>
     <tr height="95%">
         <td valign="top" align="center">
             <?php
-                $id_menu = $_GET["id"];
+                $id_menu = base64_decode($_GET["id"]);
                 if($id_menu=='siswa')
                 {
                     include('siswa.php');
                 }
-                elseif($id_menu==2)
+                elseif($id_menu=='kelas')
                 {
-                    include('latihan5.php');
+                    include('kelas.php');
                 }
-                elseif($id_menu==3)
+                elseif($id_menu=='petugas')
                 {
-                    echo ("belum ada form");
-                    //include('latihan9.php');
+                    include('petugas.php');
                 }
-                elseif($id_menu==4)
+                elseif($id_menu=='pembayaran')
                 {
-                    echo ("belum ada form");
-                    //include('latihan13.php');
+                    include('pembayaran.php');
+                }
+                elseif($id_menu=='spp')
+                {
+                    include('spp.php');
                 }
             ?>
         </td>
