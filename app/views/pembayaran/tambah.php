@@ -1,39 +1,38 @@
 <div class="row" align="center">
   
-<h1>Daftar Mahasiswa</h1>
+  <h1>Tambah Pembayaran</h1>
 
-<table class="table" border="1 px">
-    <thead>
-      <tr>
-        <th> NISN </th>
-        <th> NIS </th>
-        <th> Nama </th>
-        <th> Kelas </th>
-        <th> Alamat </th>
-        <th> No Telp </th>
-        <th> SPP </th>
-        <th> Aksi </th>
-      </tr>
-    </thead>
-    <tbody>
-        <?php foreach ($data['siswa'] as $siswa) :?>
-        <tr>
-          <td><?= $siswa['nisn'];?></td>
-          <td><?= $siswa['nis'];?></td>
-          <td><?= $siswa['nama'];?></td>
-          <td><?= $siswa['id_kelas'];?></td>
-          <td><?= $siswa['alamat'];?></td>
-          <td><?= $siswa['no_telp'];?></td>
-          <td><?= $siswa['id_spp'];?></td>
-          <td>
-            <a href="<?= BASEURL; ?>/siswa/edit/<?= $siswa['id'] ?>" class="badge badge-primary badge-pill">Edit</a>
-            <a href="<?= BASEURL; ?>/siswa/hapus/<?= $siswa['id'] ?>" class="badge badge-primary badge-pill">Hapus</a>
-          </td>
-        </tr>
-       <?php endforeach; ?>
-    </tbody>
-</table>
-<br>
-<a href="<?= BASEURL; ?>/siswa/tambah" class="btn btn-success mt-2">Tambah Mahasiswa</a>
+  <form action="<?php echo base64_encode('pembayaran/simpan'); ?>" method="POST" enctype="multipart/form-data">
+    ID Pembayaran <br>
+    <input type="text" name="id_pembayaran" required><br>
+    Petugas <br>
+    <select class="form-control" name="id_petugas">
+        <option value="">Pilih</option>
+          <?php foreach ($data['petugas'] as $row) :?>
+        <option value="<?= $row['id_petugas']; ?>"><?= $row['nama_petugas']; ?></option>
+      <?php endforeach; ?>
+    </select><br>
+    NISN <br>
+    <input type="text" name="nisn" required><br>
+    Tgl Bayar <br>
+    <input type="text" name="tgl_bayar" required><br>
+    Bulan Bayar <br>
+    <input type="text" name="bulan_dibayar" required><br>
+    Tahun Bayar <br>
+    <input type="text" name="tahun_dibayar" required><br>
+    SPP <br>
+    <select class="form-control" name="id_spp">
+        <option value="">Pilih</option>
+          <?php foreach ($data['spp'] as $row) :?>
+        <option value="<?= $row['id_spp']; ?>"><?= $row['nominal']; ?></option>
+      <?php endforeach; ?>
+    </select><br>
+    Jumlah Bayar <br>
+    <input type="text" name="jumlah_bayar" required><br>
+    <br>
+
+    <input type="submit" value="simpan" class="btn btn-success mt-2">
+    <a href="<?php echo base64_encode('pembayaran'); ?>" class="btn btn-primary mt-2">Kembali</a>
+  </form>
 
 </div>

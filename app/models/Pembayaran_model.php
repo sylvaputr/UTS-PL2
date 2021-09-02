@@ -24,11 +24,17 @@ class Pembayaran_model {
         return $this->db->single();
     }
 
-    public function tambahMahasiswa($nim, $nama, $jurusan) {
-        $this->db->query('INSERT INTO ' . $this->table . '(nim, nama, jurusan) VALUES(:nim, :nama, :jurusan)');
-        $this->db->bind('nim',$nim);
-        $this->db->bind('nama',$nama);
-        $this->db->bind('jurusan',$jurusan);
+    public function tambahPembayaran($id_pembayaran, $id_petugas, $nisn, $tgl_bayar, $bulan_dibayar, $tahun_dibayar, $id_spp, $jumlah_bayar) {
+        $this->db->query('INSERT INTO ' . $this->table . '(id_pembayaran, id_petugas, nisn, tgl_bayar, bulan_dibayar, tahun_dibayar, id_spp, jumlah_bayar) VALUES(:id_pembayaran, :id_petugas, :nisn, :tgl_bayar, :bulan_dibayar, :tahun_dibayar, :id_spp, :jumlah_bayar)');
+        $this->db->bind('id_pembayaran',$id_pembayaran);
+        $this->db->bind('id_petugas',$id_petugas);
+        $this->db->bind('nisn',$nisn);
+        $this->db->bind('id_pembayaran',$id_pembayaran);
+        $this->db->bind('id_petugas',$id_petugas);
+        $this->db->bind('nisn',$nisn);
+        $this->db->bind('id_pembayaran',$id_pembayaran);
+        $this->db->bind('id_petugas',$id_petugas);
+        $this->db->bind('nisn',$nisn);
         $this->db->execute();
     }
 

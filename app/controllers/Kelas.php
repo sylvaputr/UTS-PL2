@@ -23,25 +23,21 @@ class Kelas extends Controller {
     }
     
     public function edit($id){
-        $data['title'] = 'Detail Mahasiswa';
-        $data['mhs'] = $this->model('Mahasiswa_model')->getAllMhasiswaById($id);
-        $this->view('templates/header', $data);
-        $this->view('mahasiswa/edit', $data);
-        $this->view('templates/header');
+        $data['title'] = 'Detail Kelas';
+        $data['kelas'] = $this->model('Kelas_model')->getAllkelasById($id);
+        $this->view('kelas/edit', $data);
     }
 
-    public function updateMahasiswa(){  
-        $nim     = $_POST['nim'];
-        $nama    = $_POST['nama'];
-        $jurusan = $_POST['jurusan'];
-        $data['mhs'] = $this->model('Mahasiswa_model')->updateMahasiswa($nim,$nama,$jurusan);
-        // return $this->index();
-        header('location:../mahasiswa');
+    public function update(){  
+        $id_kelas                  = $_POST['id_kelas'];
+        $nama_kelas                = $_POST['nama_kelas'];
+        $kompetensi_keahlian       = $_POST['kompetensi_keahlian'];
+        $data['mhs'] = $this->model('Kelas_model')->updateMahasiswa($id_kelas, $nama_kelas, $kompetensi_keahlian);
+        $this->view('kelas/index', $data);
     }
 
     public function hapus($id){
-        $data['mhs'] = $this->model('Mahasiswa_model')->deleteMhs($id);
-        // return $this->index();
-        header('location:../../mahasiswa');
+        $data['siswa'] = $this->model('Kelas_model')->deleteSiswa($id);
+        $this->view('kelas/index', $data);
     }
 }

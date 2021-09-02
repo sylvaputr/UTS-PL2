@@ -9,7 +9,7 @@ class Petugas extends Controller {
     }
 
     public function tambah(){
-        $data['title'] = 'Tambah Petugas';  
+        $data['title'] = 'Tambah Petugas'; 	 
         $this->view('petugas/tambah', $data);
     }
 
@@ -20,7 +20,6 @@ class Petugas extends Controller {
         $nama_petugas    = $_POST['nama_petugas'];
         $level           = $_POST['level'];
         $data['petugas'] = $this->model('Petugas_model')->tambahPetugas($id_petugas,$username,$password,$nama_petugas,$level);
-        // return $this->index();
         $this->view('petugas/index', $data);
     }
     

@@ -20,11 +20,11 @@ class Spp_model {
         return $this->db->single();
     }
 
-    public function tambahMahasiswa($nim, $nama, $jurusan) {
-        $this->db->query('INSERT INTO ' . $this->table . '(nim, nama, jurusan) VALUES(:nim, :nama, :jurusan)');
-        $this->db->bind('nim',$nim);
-        $this->db->bind('nama',$nama);
-        $this->db->bind('jurusan',$jurusan);
+    public function tambahSpp($id_spp, $tahun, $nominal) {
+        $this->db->query('INSERT INTO spp (id_spp, tahun, nominal) VALUES(:id_spp, :tahun, :nominal)');
+        $this->db->bind('id_spp',$id_spp);
+        $this->db->bind('tahun',$tahun);
+        $this->db->bind('nominal',$nominal);
         $this->db->execute();
     }
 

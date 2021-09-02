@@ -18,8 +18,8 @@
           <td><?= $kelas['nama_kelas'];?></td>
           <td><?= $kelas['kompetensi_keahlian'];?></td>
           <td>
-            <a href="<?= BASEURL; ?>/kelas/edit/<?= $kelas['id'] ?>" class="badge badge-primary badge-pill">Edit</a>
-            <a href="<?= BASEURL; ?>/kelas/hapus/<?= $kelas['id'] ?>" class="badge badge-primary badge-pill">Hapus</a>
+            <a href="<?php echo base64_encode('kelas/edit/'.$kelas['id_kelas']); ?>" class="badge badge-primary badge-pill">Edit</a>
+            <a href="<?= BASEURL; ?>/kelas/hapus/<?= $kelas['id_kelas'] ?>" class="badge badge-primary badge-pill">Hapus</a>
           </td>
         </tr>
        <?php endforeach; ?>

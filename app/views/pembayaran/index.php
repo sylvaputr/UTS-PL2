@@ -38,6 +38,6 @@
     </tbody>
 </table>
 <br>
-<a href="<?= BASEURL; ?>/pembayaran/tambah" class="btn btn-success mt-2">Tambah Pembayaran</a>
+<a href="<?php echo base64_encode('pembayaran/tambah'); ?>" class="btn btn-success mt-2">Tambah Pembayaran</a>
 
 </div>

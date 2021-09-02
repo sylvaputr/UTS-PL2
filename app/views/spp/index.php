@@ -26,6 +26,6 @@
     </tbody>
 </table>
 <br>
-<a href="<?= BASEURL; ?>/spp/tambah" class="btn btn-success mt-2">Tambah SPP</a>
+<a href="<?php echo base64_encode('spp/tambah'); ?>" class="btn btn-success mt-2">Tambah SPP</a>
 
 </div>

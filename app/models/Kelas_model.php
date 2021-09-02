@@ -14,8 +14,8 @@ class Kelas_model {
         return $this->db->resultSet();
     }
 
-    public function getAllMhasiswaById($id) {
-        $this->db->query('SELECT * FROM ' . $this->table . ' WHERE id=:id');
+    public function getAllkelasById($id) {
+        $this->db->query('SELECT * FROM kelas WHERE id_kelas=:id_kelas');
         $this->db->bind('id',$id);
         return $this->db->single();
     }
