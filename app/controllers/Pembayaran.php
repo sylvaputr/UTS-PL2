@@ -10,7 +10,10 @@ class Pembayaran extends Controller {
 
     public function edit($id){
         $data['title'] = 'Detail Pembayaran';
-        $data['mhs'] = $this->model('Pembayaran_model')->getAllPembayaranById($id);
+        $data['pembayaran'] = $this->model('Pembayaran_model')->getAllPembayaranId($id);
+        $data['petugas'] = $this->model('Petugas_model')->getAllpetugas();	
+        $data['spp'] = $this->model('Spp_model')->getAllspp();	
+        $data['siswa'] = $this->model('Siswa_model')->getAllsiswa();	
         $this->view('pembayaran/edit', $data);
     }
 
@@ -37,14 +40,14 @@ class Pembayaran extends Controller {
     }
 
     public function update(){  
-        $id_pembayaran     = $_POST['id_pembayaran'];
-        $id_petugas    = $_POST['id_petugas'];
-        $nisn = $_POST['nisn'];
-        $tgl_bayar     = $_POST['tgl_bayar'];
-        $bulan_dibayar    = $_POST['bulan_dibayar'];
-        $tahun_dibayar = $_POST['tahun_dibayar'];
-        $id_spp     = $_POST['id_spp'];
-        $jumlah_bayar    = $_POST['jumlah_bayar'];
+        $id_pembayaran      = $_POST['id_pembayaran'];
+        $id_petugas         = $_POST['id_petugas'];
+        $nisn               = $_POST['nisn'];
+        $tgl_bayar          = $_POST['tgl_bayar'];
+        $bulan_dibayar      = $_POST['bulan_dibayar'];
+        $tahun_dibayar      = $_POST['tahun_dibayar'];
+        $id_spp             = $_POST['id_spp'];
+        $jumlah_bayar       = $_POST['jumlah_bayar'];
         $data['pembayaran'] = $this->model('Pembayaran_model')->updatePembayaran($id_pembayaran,$id_petugas,$nisn,$tgl_bayar,$bulan_dibayar,$tahun_dibayar,$id_spp,$jumlah_bayar);
         $data['pembayaran'] = $this->model('Pembayaran_model')->getAllpembayaran();
         $this->view('pembayaran/index', $data);

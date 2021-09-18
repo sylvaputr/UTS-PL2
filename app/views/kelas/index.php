@@ -19,7 +19,7 @@
           <td><?= $kelas['kompetensi_keahlian'];?></td>
           <td>
             <a href="<?php echo base64_encode('kelas/edit/'.$kelas['id_kelas']); ?>" class="badge badge-primary badge-pill">Edit</a>
-            <a href="<?php echo base64_encode('kelas/hapus/'.$kelas['id_kelas']); ?>" onclick="return confirm('Are you sure?');" class="badge badge-primary badge-pill">Hapus</a>
+            <a href="<?php echo base64_encode('kelas/hapus/'.$kelas['id_kelas']); ?>" class="badge badge-primary badge-pill" onclick="return confirm('Yakin Hapus Data Ini?')">Hapus</a>
           </td>
         </tr>
        <?php endforeach; ?>
@@ -27,5 +27,6 @@
 </table>
 <br>
 <a href="<?php echo base64_encode('kelas/tambah'); ?>" class="btn btn-success mt-2">Tambah Kelas</a>
-<a href="<?php echo base64_encode('home'); ?>" class="btn btn-success mt-2">Home</a>
+<a href="<?php echo base64_encode('home/beranda'); ?>" class="btn btn-success mt-2">Home</a>
+
 </div>

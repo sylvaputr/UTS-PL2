@@ -2,17 +2,27 @@
   
   <h1>Tambah Kelas</h1>
 
-  <form action="<?php echo base64_encode('kelas/simpan'); ?>" method="POST" enctype="multipart/form-data">
-    ID Kelas <br>
-    <input type="number" name="id_kelas" required><br>
-    Nama Kelas <br>
-    <input type="text" name="nama_kelas" required><br>
-    Kompetensi Keahlian <br>
-    <input type="text" name="kompetensi_keahlian" required><br>
-    <br>
-
-    <input type="submit" value="simpan" class="btn btn-success mt-2">
-    <a href="<?php echo base64_encode('kelas'); ?>" class="btn btn-primary mt-2">Kembali</a>
+  <form action="<?php echo base64_encode('kelas/simpan'); ?>" method="POST" enctype="multipart/form-data"> 
+    <table border="1">
+      <tr>
+          <td>ID Kelas</td>
+          <td><input type="number" name="id_kelas" required></td>
+      </tr>
+      <tr>
+          <td>Nama Kelas</td>
+          <td><input type="text" name="nama_kelas" required></td>
+      </tr>
+      <tr>
+          <td>Kompetensi Keahlian</td>
+          <td><input type="text" name="kompetensi_keahlian" required></td>
+      </tr>
+      <tr>
+          <td colspan="2" align="center">
+            <input type="submit" value="Simpan" class="btn">
+            <a href="<?php echo base64_encode('kelas'); ?>" >Kembali</a>
+          </td>
+      </tr>
+    </table>    
   </form>
 
 </div>

@@ -12,8 +12,8 @@
     <input type="number" name="nominal" value="<?= $data['spp']['nominal']; ?>" required><br>
     <br>
 
-    <input type="submit" value="simpan" class="btn btn-success mt-2">
-    <a href="<?php echo base64_encode('spp'); ?>" class="btn btn-primary mt-2">Kembali</a>
+    <input type="submit" value="Simpan" class="btn">
+    <a href="<?php echo base64_encode('spp'); ?>" >Kembali</a>
   </form>
 
 </div>

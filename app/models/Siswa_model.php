@@ -37,7 +37,7 @@ class Siswa_model {
     }
 
     public function updateSiswa($nisn, $nis, $nama, $id_kelas, $alamat, $no_telp, $id_spp) {
-        $this->db->query('UPDATE ' . $this->table . ' SET nis=:nis, nama=:nama, id_kelas=:id_kelas, alamat=:alamat, no_telp=:no_telp, id_spp=:id_spp WHERE nisn=:nisn');
+        $this->db->query('UPDATE siswa SET nis=:nis, nama=:nama, id_kelas=:id_kelas, alamat=:alamat, no_telp=:no_telp, id_spp=:id_spp WHERE nisn=:nisn');
         $this->db->bind('nisn',$nisn);
         $this->db->bind('nis',$nis);
         $this->db->bind('nama',$nama);

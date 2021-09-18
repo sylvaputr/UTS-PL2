@@ -17,7 +17,7 @@ class Pembayaran_model {
         ORDER BY id_pembayaran ASC');
         return $this->db->resultSet();
     }
-
+    
     public function getAllPembayaranId($id) {
         $this->db->query('SELECT * FROM pembayaran WHERE id_pembayaran=:id_pembayaran');
         $this->db->bind('id_pembayaran',$id);
@@ -38,7 +38,7 @@ class Pembayaran_model {
     }
 
     public function updatePembayaran($id_pembayaran, $id_petugas, $nisn, $tgl_bayar, $bulan_dibayar, $tahun_dibayar, $id_spp, $jumlah_bayar) {
-        $this->db->query('UPDATE pembayaran SET nama=:nama, jurusan=:jurusan WHERE nim=:nim');
+        $this->db->query('UPDATE pembayaran SET id_petugas=:id_petugas, nisn=:nisn, tgl_bayar=:tgl_bayar,  bulan_dibayar=:bulan_dibayar, tahun_dibayar=:tahun_dibayar, id_spp=:id_spp, jumlah_bayar=:jumlah_bayar WHERE id_pembayaran=:id_pembayaran');
         $this->db->bind('id_pembayaran',$id_pembayaran);
         $this->db->bind('id_petugas',$id_petugas);
         $this->db->bind('nisn',$nisn);

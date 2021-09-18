@@ -9,6 +9,7 @@
         <th> NIS </th>
         <th> Nama </th>
         <th> Kelas </th>
+        <th> Kompetensi <br> Keahlian </th>
         <th> Alamat </th>
         <th> No Telp </th>
         <th> Tahun SPP </th>
@@ -23,13 +24,14 @@
           <td><?= $siswa['nis'];?></td>
           <td><?= $siswa['nama'];?></td>
           <td><?= $siswa['nama_kelas'];?></td>
+          <td><?= $siswa['kompetensi_keahlian'];?></td>
           <td><?= $siswa['alamat'];?></td>
           <td><?= $siswa['no_telp'];?></td>
           <td><?= $siswa['tahun'];?></td>
           <td><?= $siswa['nominal'];?></td>
           <td>
             <a href="<?php echo base64_encode('siswa/edit/'.$siswa['nisn']); ?>" class="badge badge-primary badge-pill">Edit</a>
-            <a href="<?php echo base64_encode('siswa/hapus/'.$siswa['nisn']); ?>" onclick="return confirm('Are you sure?');" class="badge badge-primary badge-pill">Hapus</a>
+            <a href="<?php echo base64_encode('siswa/hapus/'.$siswa['nisn']); ?>" class="badge badge-primary badge-pill" onclick="return confirm('Yakin Hapus Data Ini?')">Hapus</a>
           </td>
         </tr>
        <?php endforeach; ?>
@@ -37,6 +39,6 @@
 </table>
 <br>
 <a href="<?php echo base64_encode('siswa/tambah'); ?>" class="btn btn-success mt-2">Tambah Siswa</a>
-<a href="<?php echo base64_encode('home'); ?>" class="btn btn-success mt-2">Home</a>
+<a href="<?php echo base64_encode('home/beranda'); ?>" class="btn btn-success mt-2">Home</a>
 
 </div>

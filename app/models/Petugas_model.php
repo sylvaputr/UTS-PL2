@@ -46,4 +46,14 @@ class Petugas_model {
         $this->db->execute();
     }
 
+    public function loginPetugas($data)
+    {
+        $query = "SELECT * FROM petugas WHERE username = :username AND password = :password";
+		$this->db->query($query);
+		$this->db->bind('username', $data['username']);
+		$this->db->bind('password', $data['password']);
+		$data =  $this->db->single();
+		return $data;
+    }
+
     }
