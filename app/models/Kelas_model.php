@@ -20,9 +20,9 @@ class Kelas_model {
         return $this->db->single();
     }
 
-    public function tambahKelas($id_kelas, $nama_kelas, $kompetensi_keahlian) {
-        $this->db->query('INSERT INTO kelas (id_kelas, nama_kelas, kompetensi_keahlian) VALUES(:id_kelas, :nama_kelas, :kompetensi_keahlian)');
-        $this->db->bind('id_kelas',$id_kelas);
+    public function tambahKelas($nama_kelas, $kompetensi_keahlian) {
+        $this->db->query('INSERT INTO kelas (id_kelas, nama_kelas, kompetensi_keahlian) VALUES(null, :nama_kelas, :kompetensi_keahlian)');
+        // $this->db->bind('id_kelas',$id_kelas);
         $this->db->bind('nama_kelas',$nama_kelas);
         $this->db->bind('kompetensi_keahlian',$kompetensi_keahlian);
         $this->db->execute();

@@ -1,3 +1,9 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <title>UTS PL2</title>
+</head>
+<body>
 <div class="row" align="center">
   
   <h1>Tambah Pembayaran</h1>
@@ -67,3 +73,5 @@
   </form>
 
 </div>
+</body>
+</html>

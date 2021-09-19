@@ -21,7 +21,7 @@ class Petugas_model {
     }
 
     public function tambahPetugas($id_petugas, $username, $password, $nama_petugas, $level) {
-        $this->db->query('INSERT INTO petugas (id_petugas, username, password, nama_petugas, level) VALUES(:id_petugas, :username, :password, :nama_petugas,)');
+        $this->db->query('INSERT INTO petugas (id_petugas, username, password, nama_petugas, level) VALUES(:id_petugas, :username, :password, :nama_petugas, :level)');
         $this->db->bind('id_petugas',$id_petugas);
         $this->db->bind('username',$username);
         $this->db->bind('password',$password);
@@ -46,14 +46,11 @@ class Petugas_model {
         $this->db->execute();
     }
 
-    public function loginPetugas($data)
+    public function loginPetugas($inputUsername, $inputPassword)
     {
-        $query = "SELECT * FROM petugas WHERE username = :username AND password = :password";
-		$this->db->query($query);
-		$this->db->bind('username', $data['username']);
-		$this->db->bind('password', $data['password']);
-		$data =  $this->db->single();
-		return $data;
+        $this->db->query('SELECT * FROM petugas WHERE username=:username AND password=:password ');
+        $this->db->bind('username', $inputUsername);
+        $this->db->bind('password', $inputPassword);
+        return $this->db->single();
     }
-
     }

@@ -4,7 +4,7 @@ class Kelas extends Controller {
 
     public function index(){
         $data['title'] = 'Data Kelas';
-        $data['kelas'] = $this->model('Kelas_model')->getAllkelas();
+        $data['kelas'] = $this->model('Kelas_model')->getAllkelas(); // return data kelas
         $this->view('kelas/index', $data);
     }
 
@@ -14,10 +14,9 @@ class Kelas extends Controller {
     }
 
     public function simpan(){  
-        $id_kelas                  = $_POST['id_kelas'];
         $nama_kelas                = $_POST['nama_kelas'];
         $kompetensi_keahlian       = $_POST['kompetensi_keahlian'];
-        $data['kelas'] = $this->model('Kelas_model')->tambahKelas($id_kelas, $nama_kelas, $kompetensi_keahlian);
+        $data['kelas'] = $this->model('Kelas_model')->tambahKelas($nama_kelas, $kompetensi_keahlian);
         $data['kelas'] = $this->model('Kelas_model')->getAllkelas();
         $this->view('kelas/index', $data);
     }
