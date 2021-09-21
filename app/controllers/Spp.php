@@ -14,10 +14,9 @@ class Spp extends Controller {
     }
 
     public function simpan(){  
-        $id_spp     = $_POST['id_spp'];
         $tahun      = $_POST['tahun'];
         $nominal    = $_POST['nominal'];
-        $data['spp'] = $this->model('Spp_model')->tambahSpp($id_spp, $tahun, $nominal);
+        $data['spp'] = $this->model('Spp_model')->tambahSpp($tahun, $nominal);
         $data['spp'] = $this->model('Spp_model')->getAllspp();
         $this->view('spp/index', $data);
     }

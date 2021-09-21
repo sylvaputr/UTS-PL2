@@ -24,9 +24,8 @@ class Pembayaran_model {
         return $this->db->single();
     }
 
-    public function tambahPembayaran($id_pembayaran, $id_petugas, $nisn, $tgl_bayar, $bulan_dibayar, $tahun_dibayar, $id_spp, $jumlah_bayar) {
-        $this->db->query('INSERT INTO pembayaran (id_pembayaran, id_petugas, nisn, tgl_bayar, bulan_dibayar, tahun_dibayar, id_spp, jumlah_bayar) VALUES(:id_pembayaran, :id_petugas, :nisn, :tgl_bayar, :bulan_dibayar, :tahun_dibayar, :id_spp, :jumlah_bayar)');
-        $this->db->bind('id_pembayaran',$id_pembayaran);
+    public function tambahPembayaran($id_petugas, $nisn, $tgl_bayar, $bulan_dibayar, $tahun_dibayar, $id_spp, $jumlah_bayar) {
+        $this->db->query('INSERT INTO pembayaran (id_pembayaran, id_petugas, nisn, tgl_bayar, bulan_dibayar, tahun_dibayar, id_spp, jumlah_bayar) VALUES(null, :id_petugas, :nisn, :tgl_bayar, :bulan_dibayar, :tahun_dibayar, :id_spp, :jumlah_bayar)');
         $this->db->bind('id_petugas',$id_petugas);
         $this->db->bind('nisn',$nisn);
         $this->db->bind('tgl_bayar',$tgl_bayar);

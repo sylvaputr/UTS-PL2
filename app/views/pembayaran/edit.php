@@ -12,28 +12,24 @@
       <input type="hidden" name="id_pembayaran" value="<?= $data['pembayaran']['id_pembayaran']; ?>">
       <table border="1">
         <tr>
-            <td>ID Pembayaran</td>
-            <td><input type="number" name="id_pembayaran" value="<?= $data['pembayaran']['id_pembayaran']; ?>" required disabled></td>
-        </tr>
-        <tr>
             <td>Petugas</td>
             <td>
-              <select class="form-control" name="id_petugas">
+              <select class="form-control" name="id_petugas" required>
                   <option value="">Pilih</option>
                     <?php foreach ($data['petugas'] as $row) :?>
-                  <option value="<?= $row['id_petugas']; ?>"><?= $row['nama_petugas']; ?></option>
-                <?php endforeach; ?>
+                      <option value="<?= $row['id_petugas']; ?>" <?php if($data['pembayaran']['id_petugas'] == $row['id_petugas']) { echo "selected"; } ?>><?= $row['nama_petugas']; ?></option>
+                    <?php endforeach; ?>
               </select>
             </td>
         </tr>
         <tr>
             <td>NISN</td>
             <td>
-              <select class="form-control" name="nisn">
+              <select class="form-control" name="nisn" required>
                   <option value="">Pilih</option>
                     <?php foreach ($data['siswa'] as $row) :?>
-                  <option value="<?= $row['nisn']; ?>"><?= $row['nisn']; ?></option>
-                <?php endforeach; ?>
+                      <option value="<?= $row['nisn']; ?>" <?php if($data['pembayaran']['nisn'] == $row['nisn']) { echo "selected"; } ?>><?= $row['nisn']; ?></option>
+                    <?php endforeach; ?>
               </select>
             </td>
         </tr>
@@ -52,10 +48,10 @@
         <tr>
             <td>SPP</td>
             <td>
-              <select class="form-control" name="id_spp">
+              <select class="form-control" name="id_spp" required>
                   <option value="">Pilih</option>
                     <?php foreach ($data['spp'] as $row) :?>
-                  <option value="<?= $row['id_spp']; ?>"><?= $row['nominal']; ?></option>
+                      <option value="<?= $row['id_spp']; ?>" <?php if($data['pembayaran']['id_spp'] == $row['id_spp']) { echo "selected"; } ?>><?= $row['tahun']; ?> - <?= $row['nominal']; ?></option>
                 <?php endforeach; ?>
               </select>
             </td>

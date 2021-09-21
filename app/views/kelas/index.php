@@ -11,7 +11,7 @@
   <table class="table" border="1 px">
       <thead>
         <tr>
-          <th> ID Kelas </th>
+          <th> No </th>
           <th> Nama Kelas </th>
           <th> Kompetensi Keahlian </th>
           <th> Aksi </th>

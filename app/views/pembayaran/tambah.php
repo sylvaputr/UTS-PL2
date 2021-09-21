@@ -11,13 +11,9 @@
   <form action="<?php echo base64_encode('pembayaran/simpan'); ?>" method="POST" enctype="multipart/form-data">
     <table border="1">
       <tr>
-          <td>ID Pembayaran</td>
-          <td><input type="number" name="id_pembayaran" required></td>
-      </tr>
-      <tr>
           <td>Petugas</td>
           <td>
-            <select class="form-control" name="id_petugas">
+            <select class="form-control" name="id_petugas" required>
                 <option value="">Pilih</option>
                   <?php foreach ($data['petugas'] as $row) :?>
                 <option value="<?= $row['id_petugas']; ?>"><?= $row['nama_petugas']; ?></option>
@@ -28,7 +24,7 @@
       <tr>
           <td>NISN</td>
           <td>
-            <select class="form-control" name="nisn">
+            <select class="form-control" name="nisn" required>
                 <option value="">Pilih</option>
                   <?php foreach ($data['siswa'] as $row) :?>
                 <option value="<?= $row['nisn']; ?>"><?= $row['nisn']. ' - '.$row['nama'];; ?></option>
@@ -51,10 +47,10 @@
       <tr>
           <td>SPP</td>
           <td>
-            <select class="form-control" name="id_spp">
+            <select class="form-control" name="id_spp" required>
                 <option value="">Pilih</option>
                   <?php foreach ($data['spp'] as $row) :?>
-                <option value="<?= $row['id_spp']; ?>"><?= $row['nominal']; ?></option>
+                <option value="<?= $row['id_spp']; ?>"><?= $row['tahun']; ?> - <?= $row['nominal']; ?></option>
               <?php endforeach; ?>
             </select>
           </td>

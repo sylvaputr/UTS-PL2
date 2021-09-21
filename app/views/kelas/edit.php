@@ -10,10 +10,6 @@
       <input type="hidden" name="id_kelas" value="<?= $data['kelas']['id_kelas']; ?>">
       <table border="1">
         <tr>
-            <td>ID Kelas</td>
-            <td><input type="number" value="<?= $data['kelas']['id_kelas']; ?>" required disabled></td>
-        </tr>
-        <tr>
             <td>Nama Kelas</td>
             <td><input type="text" name="nama_kelas" value="<?= $data['kelas']['nama_kelas']; ?>" required ></td>
         </tr>

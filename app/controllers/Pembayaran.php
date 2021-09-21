@@ -26,7 +26,6 @@ class Pembayaran extends Controller {
     }
 
     public function simpan(){  
-        $id_pembayaran     = $_POST['id_pembayaran'];
         $id_petugas    = $_POST['id_petugas'];
         $nisn = $_POST['nisn'];
         $tgl_bayar     = $_POST['tgl_bayar'];
@@ -34,7 +33,7 @@ class Pembayaran extends Controller {
         $tahun_dibayar = $_POST['tahun_dibayar'];
         $id_spp     = $_POST['id_spp'];
         $jumlah_bayar    = $_POST['jumlah_bayar'];
-        $data['pembayaran'] = $this->model('Pembayaran_model')->tambahPembayaran($id_pembayaran,$id_petugas,$nisn,$tgl_bayar,$bulan_dibayar,$tahun_dibayar,$id_spp,$jumlah_bayar);
+        $data['pembayaran'] = $this->model('Pembayaran_model')->tambahPembayaran($id_petugas,$nisn,$tgl_bayar,$bulan_dibayar,$tahun_dibayar,$id_spp,$jumlah_bayar);
         $data['pembayaran'] = $this->model('Pembayaran_model')->getAllpembayaran();
         $this->view('pembayaran/index', $data);
     }

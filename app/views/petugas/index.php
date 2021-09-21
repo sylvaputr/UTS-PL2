@@ -11,7 +11,7 @@
     <table class="table" border="1 px">
         <thead>
           <tr>
-            <th> ID Petugas </th>
+            <th> No </th>
             <th> Username </th>
             <th> Password </th>
             <th> Nama Petugas </th>
@@ -20,9 +20,9 @@
           </tr>
         </thead>
         <tbody>
-            <?php foreach ($data['petugas'] as $petugas) :?>
+            <?php $counter = 1;; foreach ($data['petugas'] as $petugas) :?>
             <tr>
-              <td><?= $petugas['id_petugas'];?></td>
+              <td><?= $counter;?></td>
               <td><?= $petugas['username'];?></td>
               <td><?= $petugas['password'];?></td>
               <td><?= $petugas['nama_petugas'];?></td>
@@ -32,7 +32,7 @@
                 <a href="<?php echo base64_encode('petugas/hapus/'.$petugas['id_petugas']); ?>" class="badge badge-primary badge-pill" onclick="return confirm('Yakin Hapus Data Ini?')">Hapus</a>
               </td>
             </tr>
-          <?php endforeach; ?>
+          <?php $counter+= 1; endforeach; ?>
         </tbody>
     </table>
     <br>

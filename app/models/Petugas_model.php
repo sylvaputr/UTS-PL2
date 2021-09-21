@@ -20,9 +20,8 @@ class Petugas_model {
         return $this->db->single();
     }
 
-    public function tambahPetugas($id_petugas, $username, $password, $nama_petugas, $level) {
-        $this->db->query('INSERT INTO petugas (id_petugas, username, password, nama_petugas, level) VALUES(:id_petugas, :username, :password, :nama_petugas, :level)');
-        $this->db->bind('id_petugas',$id_petugas);
+    public function tambahPetugas($username, $password, $nama_petugas, $level) {
+        $this->db->query('INSERT INTO petugas (id_petugas, username, password, nama_petugas, level) VALUES(null, :username, :password, :nama_petugas, :level)');
         $this->db->bind('username',$username);
         $this->db->bind('password',$password);
         $this->db->bind('nama_petugas',$nama_petugas);

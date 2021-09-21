@@ -20,9 +20,8 @@ class Spp_model {
         return $this->db->single();
     }
 
-    public function tambahSpp($id_spp, $tahun, $nominal) {
-        $this->db->query('INSERT INTO spp (id_spp, tahun, nominal) VALUES(:id_spp, :tahun, :nominal)');
-        $this->db->bind('id_spp',$id_spp);
+    public function tambahSpp($tahun, $nominal) {
+        $this->db->query('INSERT INTO spp (id_spp, tahun, nominal) VALUES(null, :tahun, :nominal)');
         $this->db->bind('tahun',$tahun);
         $this->db->bind('nominal',$nominal);
         $this->db->execute();

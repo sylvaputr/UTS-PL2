@@ -11,10 +11,6 @@
     <form action="<?php echo base64_encode('petugas/simpan'); ?>" method="POST" enctype="multipart/form-data"> 
       <table border="1">
         <tr>
-            <td>ID Petugas</td>
-            <td><input type="number" name="id_petugas" required></td>
-        </tr>
-        <tr>
             <td>Username</td>
             <td><input type="text" name="username" required></td>
         </tr>
@@ -29,7 +25,7 @@
         <tr>
             <td>Level</td>
             <td>
-                <select class="form-control" name="level">
+                <select class="form-control" name="level" required>
                     <option value="">Pilih</option>
                     <option value="Administrator">Administrator</option>
                     <option value="Petugas">Petugas</option>

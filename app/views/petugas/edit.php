@@ -12,10 +12,6 @@
       <input type="hidden" name="id_petugas" value="<?= $data['petugas']['id_petugas']; ?>">
       <table border="1">
         <tr>
-            <td>ID Petugas</td>
-            <td><input type="number" value="<?= $data['petugas']['id_petugas']; ?>" required disabled></td>
-        </tr>
-        <tr>
             <td>Username</td>
             <td><input type="text" name="username" value="<?= $data['petugas']['username']; ?>" required></td>
         </tr>
@@ -30,8 +26,8 @@
         <tr>
             <td>Level</td>
             <td>
-                <select class="form-control" name="level">
-                  <option value="">Pilih</option>
+                <select class="form-control" name="level" required>
+                  <option value=""><?= $data['petugas']['level']; ?></option>
                   <option value="1">Administrator</option>
                   <option value="2">Petugas</option>
               </select>

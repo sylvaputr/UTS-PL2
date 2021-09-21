@@ -11,7 +11,7 @@
     <table class="table" border="1 px">
         <thead>
           <tr>
-            <th> ID Pembayaran </th>
+            <th> No </th>
             <th> Petugas </th>
             <th> NISN </th>
             <th> Tgl Bayar </th>

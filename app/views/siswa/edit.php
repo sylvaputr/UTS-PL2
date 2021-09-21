@@ -29,7 +29,7 @@
                 <select class="form-control" name="id_kelas">
                     <option value="">Pilih</option>
                         <?php foreach ($data['kelas'] as $row) :?>
-                    <option value="<?= $row['id_kelas']; ?>" <?php if($data['siswa']['id_kelas'] == $row['id_kelas']) { echo "selected"; } ?>><?= $row['nama_kelas']; ?></option>
+                    <option value="<?= $row['id_kelas']; ?>" <?php if($data['siswa']['id_kelas'] == $row['id_kelas']) { echo "selected"; } ?>><?= $row['nama_kelas']; ?> - <?= $row['kompetensi_keahlian']; ?></option>
                     <?php endforeach; ?>
                 </select>
             </td>

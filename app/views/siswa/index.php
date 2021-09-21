@@ -11,6 +11,7 @@
   <table class="table" border="1 px">
       <thead>
         <tr>
+          <th> No </th>
           <th> NISN </th>
           <th> NIS </th>
           <th> Nama </th>
@@ -24,8 +25,9 @@
         </tr>
       </thead>
       <tbody>
-          <?php foreach ($data['siswa'] as $siswa) :?>
+          <?php $counter = 1; foreach ($data['siswa'] as $siswa) :?>
           <tr align="center">
+            <td><?= $counter; ?></td>
             <td><?= $siswa['nisn'];?></td>
             <td><?= $siswa['nis'];?></td>
             <td><?= $siswa['nama'];?></td>
@@ -40,7 +42,7 @@
               <a href="<?php echo base64_encode('siswa/hapus/'.$siswa['nisn']); ?>" class="badge badge-primary badge-pill" onclick="return confirm('Yakin Hapus Data Ini?')">Hapus</a>
             </td>
           </tr>
-        <?php endforeach; ?>
+        <?php $counter+= 1; endforeach; ?>
       </tbody>
   </table>
   <br>

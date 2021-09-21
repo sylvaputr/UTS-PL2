@@ -14,12 +14,11 @@ class Petugas extends Controller {
     }
 
     public function simpan(){  
-        $id_petugas      = $_POST['id_petugas'];
         $username        = $_POST['username'];
         $password        = $_POST['password'];
         $nama_petugas    = $_POST['nama_petugas'];
         $level           = $_POST['level'];
-        $data['petugas'] = $this->model('Petugas_model')->tambahPetugas($id_petugas,$username,$password,$nama_petugas,$level);
+        $data['petugas'] = $this->model('Petugas_model')->tambahPetugas($username,$password,$nama_petugas,$level);
         $data['petugas'] = $this->model('Petugas_model')->getAllpetugas();
         $this->view('petugas/index', $data);
     }

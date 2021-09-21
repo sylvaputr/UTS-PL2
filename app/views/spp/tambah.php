@@ -11,10 +11,6 @@
     <form action="<?php echo base64_encode('spp/simpan'); ?>" method="POST" enctype="multipart/form-data">
       <table border="1">
         <tr>
-            <td>ID SPP</td>
-            <td><input type="number" name="id_spp" required></td>
-        </tr>
-        <tr>
             <td>Tahun</td>
             <td><input type="text" name="tahun" required></td>
         </tr>

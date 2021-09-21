@@ -11,16 +11,16 @@
   <table class="table" border="1 px">
       <thead>
         <tr>
-          <th> ID SPP </th>
+          <th> No </th>
           <th> Tahun </th>
           <th> Nominal </th>
           <th> Aksi </th>
         </tr>
       </thead>
       <tbody>
-          <?php foreach ($data['spp'] as $spp) :?>
+          <?php $counter = 1; foreach ($data['spp'] as $spp) :?>
           <tr>
-            <td><?= $spp['id_spp'];?></td>
+            <td><?= $counter;?></td>
             <td><?= $spp['tahun'];?></td>
             <td><?= $spp['nominal'];?></td>
             <td>
@@ -28,7 +28,7 @@
               <a href="<?php echo base64_encode('spp/hapus/'.$spp['id_spp']); ?>" class="badge badge-primary badge-pill" onclick="return confirm('Yakin Hapus Data Ini?')">Hapus</a>
             </td>
           </tr>
-         <?php endforeach; ?>
+         <?php $counter+= 1; endforeach; ?>
       </tbody>
   </table>
   <br>
