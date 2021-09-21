@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 19 Sep 2021 pada 15.37
+-- Waktu pembuatan: 21 Sep 2021 pada 14.48
 -- Versi server: 10.4.11-MariaDB
 -- Versi PHP: 7.4.5
 
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `latihan_spp`
+-- Database: `uts-pl2`
 --
 
 -- --------------------------------------------------------
@@ -41,9 +41,7 @@ INSERT INTO `kelas` (`id_kelas`, `nama_kelas`, `kompetensi_keahlian`) VALUES
 (1, 'Karyawan', 'TI'),
 (2, 'Reguler', 'TI'),
 (3, 'Karyawan', 'SI'),
-(4, 'Reguler', 'S'),
-(5, 'Karyawan', 'as'),
-(6, 'Karyawansssss', 'SI');
+(4, 'Reguler', 'S');
 
 -- --------------------------------------------------------
 
@@ -61,6 +59,13 @@ CREATE TABLE `pembayaran` (
   `id_spp` int(11) NOT NULL,
   `jumlah_bayar` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data untuk tabel `pembayaran`
+--
+
+INSERT INTO `pembayaran` (`id_pembayaran`, `id_petugas`, `nisn`, `tgl_bayar`, `bulan_dibayar`, `tahun_dibayar`, `id_spp`, `jumlah_bayar`) VALUES
+(2, 5, '0098925099', 2, 'agus', 2122, 2, 12232);
 
 -- --------------------------------------------------------
 
@@ -82,8 +87,7 @@ CREATE TABLE `petugas` (
 
 INSERT INTO `petugas` (`id_petugas`, `username`, `password`, `nama_petugas`, `level`) VALUES
 (1, 'sylva', 'sylva', 'Sylva Aliffina', 'Petugas'),
-(5, 'sylva', 'admin', 'Zayn', 'Administrator'),
-(7, 'admin_pusat', 'sylvaputr', 'Zayn', 'Administrator');
+(5, 'sylva', 'admin', 'Zayn', 'Administrator');
 
 -- --------------------------------------------------------
 
@@ -100,6 +104,13 @@ CREATE TABLE `siswa` (
   `no_telp` int(14) NOT NULL,
   `id_spp` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data untuk tabel `siswa`
+--
+
+INSERT INTO `siswa` (`nisn`, `nis`, `nama`, `id_kelas`, `alamat`, `no_telp`, `id_spp`) VALUES
+('0098925099', 141970600, 'Sylva Aliff', 1, 'Kp. Kopo ', 895, 1);
 
 -- --------------------------------------------------------
 
@@ -195,13 +206,13 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT untuk tabel `kelas`
 --
 ALTER TABLE `kelas`
-  MODIFY `id_kelas` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id_kelas` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT untuk tabel `pembayaran`
 --
 ALTER TABLE `pembayaran`
-  MODIFY `id_pembayaran` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_pembayaran` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT untuk tabel `petugas`
